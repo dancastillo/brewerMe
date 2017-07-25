@@ -1,3 +1,11 @@
-.DS_Store
+# Dependency directories
 node_modules
-npm-debug.log
+
+*.log
+npm-debug.log*
+
+# macOS files
+.DS_Store
+
+# Settings files
+settings*.json
