@@ -1,25 +1,43 @@
 <template name="LandingPage">
   <div class="row">
-    
     <div class="col-sm-12 text-center pt-4 pb-3">
-      <h1>Welcome to BrewerMe!</h1>
+      <h2>Welcome to BrewerMe!</h2>
     </div>
-    
+  </div>
+  
+  <div class="row">
     <div class="col-sm-12 text-center pb-1">
-      <h5>Search for breweries around your location or search in a specific location.</h5>
+      <h6>Search for breweries around your location or search in a specific location.</h6>
     </div>
-    
-    <div class="col-sm-12 text-center pb-1">
-      <p>Brewery search is powered by <a href="https://beermapping.com">The Beer Mapping Project</a></p>
-    </div>
-    
-    <div class="col-sm-12">
-      <div class="row">
-        <div class="col-sm-6">
-          <button class="btn btn-primary btn-lg">Search for Breweries</button>
+  </div>
+  
+  <div class="row">
+    <div class="offset-sm-2 col-sm-6">
+      <div class="input-group">
+        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Action
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
         </div>
       </div>
     </div>
     
+    <div class="col-sm-4">
+      <button class="btn btn-primary">Search for Breweries</button>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-12 text-center pb-1">
+      <p>BrewerMe search is powered by <a href="http://www.brewerydb.com/">Brewery DB</a></p>
+    </div>
   </div>
 </template>
