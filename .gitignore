@@ -9,3 +9,6 @@ npm-debug.log*
 
 # Settings files
 settings*.json
+
+# Test Files
+examples.*
