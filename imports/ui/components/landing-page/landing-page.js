@@ -10,6 +10,7 @@ Template.LandingPage.events({
   'click .js-search-brewerydb'(event, template) {
     event.preventDefault();
     
-    console.log("submit");
+    const search = template.find('#search').val();
+    console.log(search);
   }
 });
