@@ -10,7 +10,14 @@ Template.LandingPage.events({
   'click .js-search-brewerydb'(event, template) {
     event.preventDefault();
     
-    const search = template.find('#search').val();
-    console.log(search);
+    const search = template.find('#searchInput').value;
+    const preference = template.find('#searchPreference').value;
+		
+		const searchUrl = `locations?${preference}=${search}`
+
+		Meteor.call('brewerySearch', (error, response) => {
+			console.log(error);
+			console.log(reponse);
+		});
   }
 });
