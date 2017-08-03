@@ -1,13 +1,31 @@
 import { Meteor } from 'meteor/meteor';
+import { ReactiveVar } from 'meteor/reactive-var';
 import { formatSearch,
          replaceSpaces } from '/imports/utils/helpers'
+
+import './states/';
 import './landing-page.html';
 
-Template.LandingPage.helpers({
+Template.LandingPage.onCreated(function() {
+  this.stateOptions = new ReactiveVar(false);
+});
 
+Template.LandingPage.helpers({
+  stateSelected() {
+    return Template.instance().stateOptions.get();
+  }
 });
 
 Template.LandingPage.events({
+  'change #searchPreference'(event, template) {
+    event.preventDefault();
+    
+    const selectedOption = template.find('#searchPreference').value;
+    const stateSelect = (selectedOption === 'region') ? true : false;
+    console.log(stateSelect);
+    template.stateOptions.set(stateSelect);
+  },
+  
   'click .js-search-brewerydb'(event, template) {
     event.preventDefault();
     
