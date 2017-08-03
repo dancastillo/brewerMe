@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { formatSearch,
          replaceSpaces } from '/imports/utils/helpers'
 
-import './states/';
+import './stateselect/';
 import './landing-page.html';
 
 Template.LandingPage.onCreated(function() {
