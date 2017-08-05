@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { formatSearch,
          replaceSpaces } from '/imports/utils/helpers'
+import { Template } from 'meteor/templating';
 
 import './stateselect/';
 import './landing-page.html';
@@ -31,15 +32,14 @@ Template.LandingPage.events({
     
     let search = template.find('#searchInput').value;
     const preference = template.find('#searchPreference').value;
-		const searchFormat = formatSearch(search);
-		
-		const searchUrl = `locations?${preference}=${searchFormat}`;
-		const url = replaceSpaces(searchUrl);
-		
-		console.log(url)
-		Meteor.call('brewerySearch', url, (error, response) => {
-			console.log(error);
-			console.log(reponse);
-		});
-  }
+    const searchFormat = formatSearch(search);
+
+    const searchUrl = `locations?${preference}=${searchFormat}`;
+    const url = replaceSpaces(searchUrl);
+
+    Meteor.call('brewerySearch', url, (error, response) => {
+    	console.log(error);
+    	console.log(reponse);
+    });
+  },
 });
