@@ -42,4 +42,20 @@ Template.LandingPage.events({
     	console.log(reponse);
     });
   },
+  
+  'focusout #searchInput'(event, template) {
+    event.preventDefault();
+    const search = template.find('#searchInput').value;
+    
+    if(search.trim() !== "") {
+      
+      // When no input is added disable button and add has-danger class to input
+      $(event.target.parentElement).removeClass('has-danger');
+      $('.js-search-brewerydb').removeClass('disabled');
+    } else {
+      // When input is added remove disable class and remove has-danger class
+      $(event.target.parentElement).addClass('has-danger');
+      $('.js-search-brewerydb').addClass('disabled');
+    }
+  }
 });
