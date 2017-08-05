@@ -14,15 +14,17 @@
   <div class="row">
     <div class="col-sm-10 offset-sm-1 text-center">
       <form class="form-inline justify-content-center">
-        <div class="form-group">
           {{# if stateSelected }}
-            {{> StateSelect }}
+            <div class="form-group">
+              {{> StateSelect }}
+            </div>
           {{ else }}
-            <input type="text" class="form-control" id="searchInput" placeholder="Dan's Brewery">
+            <div class="form-group row pr-5" id="searchInputDiv">
+              <input type="text" class="form-control form-control-danger" id="searchInput" placeholder="Dan's Brewery">
+            </div>
           {{/ if }}
-        </div>
         
-        <div class="form-group">
+        <div class="form-group pr-5">
           <select class="form-control" id="searchPreference">
             <option selected value="">Choose...</option>
             <option value="locality">City</option>
@@ -31,7 +33,7 @@
           </select>
         </div>
         
-        <button type="submit" class="btn btn-primary js-search-brewerydb">Search for Breweries</button>
+        <button type="submit" class="btn btn-primary js-search-brewerydb disabled">Search for Breweries</button>
       </form>
     </div>
   </div>
