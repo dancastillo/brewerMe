@@ -52,9 +52,22 @@ Template.LandingPage.events({
       // When no input is added disable button and add has-danger class to input
       $(event.target.parentElement).removeClass('has-danger');
       $('.js-search-brewerydb').removeClass('disabled');
+      
     } else {
+      
       // When input is added remove disable class and remove has-danger class
       $(event.target.parentElement).addClass('has-danger');
+      $('.js-search-brewerydb').addClass('disabled');
+      
+    }
+  },
+  
+  'change #state'(event, template) {
+    const state = template.find('#state').value;
+    
+    if(state !== "") {
+      $('.js-search-brewerydb').removeClass('disabled');
+    } else {
       $('.js-search-brewerydb').addClass('disabled');
     }
   }
