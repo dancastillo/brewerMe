@@ -9,11 +9,25 @@ import './landing-page.html';
 
 Template.LandingPage.onCreated(function() {
   this.stateOptions = new ReactiveVar(false);
+  this.displayResults = new ReactiveVar(false);
+  
+  const instance = Template.instance();
+  console.log(instance)
+  instance.data.response = {};
 });
 
 Template.LandingPage.helpers({
   stateSelected() {
     return Template.instance().stateOptions.get();
+  },
+  
+  showResults() {
+    return Template.instance().displayResults.get();
+  },
+  
+  brewery() {
+    console.log(Template.instance().data.response.data)
+    return Template.instance().data.response.data;
   }
 });
 
@@ -23,7 +37,7 @@ Template.LandingPage.events({
     
     const selectedOption = template.find('#searchPreference').value;
     const stateSelect = (selectedOption === 'region') ? true : false;
-    console.log(stateSelect);
+    
     template.stateOptions.set(stateSelect);
   },
   
@@ -38,8 +52,15 @@ Template.LandingPage.events({
     const url = replaceSpaces(searchUrl);
 
     Meteor.call('brewerySearch', url, (error, response) => {
-    	console.log(error);
-    	console.log(reponse);
+      if (error) {
+        console.log(error);
+        throw new Meteor.Error();
+      }
+      
+      // store response from brewerydb
+      template.data.response = JSON.parse(response);
+      console.log(template.data.response)
+      template.displayResults.set(true);
     });
   },
   
