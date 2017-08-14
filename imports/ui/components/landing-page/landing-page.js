@@ -12,7 +12,6 @@ Template.LandingPage.onCreated(function() {
   this.displayResults = new ReactiveVar(false);
   
   const instance = Template.instance();
-  console.log(instance)
   instance.data.response = {};
 });
 
@@ -26,7 +25,6 @@ Template.LandingPage.helpers({
   },
   
   brewery() {
-    console.log(Template.instance().data.response.data)
     return Template.instance().data.response.data;
   }
 });
@@ -61,7 +59,7 @@ Template.LandingPage.events({
       
       // store response from brewerydb
       template.data.response = JSON.parse(response);
-      console.log(template.data.response)
+      
       template.displayResults.set(true);
     });
   },
