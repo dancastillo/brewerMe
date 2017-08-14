@@ -39,13 +39,21 @@
   </div>
   
   {{# if showResults }}
+  <div class="row">
     {{# each brewery }}
-      <div class="row">
-        <div class="col-sm-10 offset-sm-1 text-center">
-          {{ this.brewery.name }}
+    <div class="col-sm-6 p-4">
+      <div class="card">
+        <img class="card-img-top w-50 rounded mx-auto d-block" src={{ this.brewery.images.squareMedium }} alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">{{ this.brewery.name }}</h4>
+          <p class="card-text">{{ this.brewery.description }}</p>
+          <p class="card-text">Established: {{ this.brewery.established }}</p>
+          <a href={{ this.brewery.website }} class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
+    </div>
     {{/ each }}
+  </div>
   {{/ if }}
   
   <button id="testing">testing</button>
