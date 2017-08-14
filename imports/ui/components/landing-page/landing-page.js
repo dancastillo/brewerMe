@@ -44,7 +44,9 @@ Template.LandingPage.events({
   'click .js-search-brewerydb'(event, template) {
     event.preventDefault();
     
-    let search = template.find('#searchInput').value;
+    const state = template.stateOptions.get();
+    const search = (state) ? template.find('#state').value : template.find('#searchInput').value ;
+    
     const preference = template.find('#searchPreference').value;
     const searchFormat = formatSearch(search);
 
