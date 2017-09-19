@@ -6,14 +6,14 @@
   </div>
   
   <div class="row">
-    <div class="col-sm-12 text-center pb-1">
-      <h6>Search for breweries around your location or search in a specific location.</h6>
+    <div class="col-sm-12 text-center pb-10">
+      <h4>Search for breweries around your location or search in a specific location.</h4>
     </div>
   </div>
   
   <div class="row">
-    <div class="col-sm-10 offset-sm-1 text-center">
-      <form class="form-inline justify-content-center">
+    <div class="col-sm-4 offset-sm-4 text-center">
+      <form class="justify-content-center">
           {{# if stateSelected }}
             <div class="form-group pr-5">
               {{> StateSelect }}
@@ -22,18 +22,21 @@
             <div class="form-group row pr-5" id="searchInputDiv">
               <input type="text" class="form-control form-control-danger" id="searchInput" placeholder="Dan's Brewery">
             </div>
+            <div class="form-group pr-5">
+              {{> StateSelect }}
+            </div>
           {{/ if }}
         
         <div class="form-group pr-5">
           <select class="form-control" id="searchPreference">
-            <option selected value="">Choose...</option>
-            <option value="locality">City</option>
+            <!-- <option selected value="">Choose...</option> -->
+            <option value="locality">City and State</option>
             <option value="region">State</option>
             <option value="postalCode">Zip</option>
           </select>
         </div>
         
-        <button type="submit" class="btn btn-primary js-search-brewerydb disabled">Search for Breweries</button>
+        <button type="submit" class="btn btn-primary btn-lg text-center js-search-brewerydb disabled">Search for Breweries</button>
       </form>
     </div>
   </div>
