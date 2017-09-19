@@ -19,12 +19,18 @@
               {{> StateSelect }}
             </div>
           {{ else }}
-            <div class="form-group row pr-5" id="searchInputDiv">
-              <input type="text" class="form-control form-control-danger" id="searchInput" placeholder="Dan's Brewery">
-            </div>
-            <div class="form-group pr-5">
-              {{> StateSelect }}
-            </div>
+            {{# if zipSelected }}
+              <div class="form-group row pr-5" id="searchInputDiv">
+                <input type="text" class="form-control form-control-danger" id="searchInput" placeholder="Dan's Brewery">
+              </div>
+            {{ else }}  
+              <div class="form-group row pr-5" id="searchInputDiv">
+                <input type="text" class="form-control form-control-danger" id="searchInput" placeholder="Dan's Brewery">
+              </div>
+              <div class="form-group pr-5">
+                {{> StateSelect }}
+              </div>
+            {{/ if }}
           {{/ if }}
         
         <div class="form-group pr-5">
