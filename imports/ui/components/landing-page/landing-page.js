@@ -59,7 +59,6 @@ Template.LandingPage.events({
       
       // store response from brewerydb
       template.data.response = JSON.parse(response);
-      
       template.displayResults.set(true);
     });
   },
