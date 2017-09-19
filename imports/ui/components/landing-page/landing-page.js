@@ -9,6 +9,7 @@ import './landing-page.html';
 
 Template.LandingPage.onCreated(function() {
   this.stateOptions = new ReactiveVar(false);
+  this.zipOptions = new ReactiveVar(false);
   this.displayResults = new ReactiveVar(false);
   
   const instance = Template.instance();
@@ -18,6 +19,10 @@ Template.LandingPage.onCreated(function() {
 Template.LandingPage.helpers({
   stateSelected() {
     return Template.instance().stateOptions.get();
+  },
+
+  zipSelected() {
+    return Template.instance().zipOptions.get();
   },
   
   showResults() {
@@ -35,8 +40,10 @@ Template.LandingPage.events({
     
     const selectedOption = template.find('#searchPreference').value;
     const stateSelect = (selectedOption === 'region') ? true : false;
+    const zipSelect = (selectedOption === 'postalCode') ? true : false;
     
     template.stateOptions.set(stateSelect);
+    template.zipOptions.set(zipSelect);
   },
   
   'click .js-search-brewerydb'(event, template) {
