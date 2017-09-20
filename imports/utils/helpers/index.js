@@ -13,3 +13,9 @@ export const formatSearch = function formatSearch(search) {
 export const replaceSpaces = function replaceSpaces(url) {
 	return url.split(' ').join('+');
 }
+
+export const cityStateFormat = function(city, state) {
+	const searchFormat = formatSearch(city);
+	const search = `${searchFormat}&region=${state}`
+	return search;
+}
