@@ -9,10 +9,8 @@ Meteor.methods({
 	brewerySearch: function(location) {
 		const url = `${brewerydb}${location}${api}`;
     const fut = new future();
-    
 		HTTP.call( 'GET', url, {}, (error, response) => {
       if(error) {
-        console.log(error);
         fut.return(error);
       } else {
         if (response.statusCode === 200) {
