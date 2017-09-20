@@ -1,7 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { formatSearch,
-         replaceSpaces } from '/imports/utils/helpers'
+         replaceSpaces,
+         cityStateFormat } from '/imports/utils/helpers'
 import { Template } from 'meteor/templating';
 
 import './stateselect/';
@@ -53,17 +54,25 @@ Template.LandingPage.events({
     template.displayResults.set(false);
 
     const state = template.stateOptions.get();
-    const search = (state) ? template.find('#state').value : template.find('#searchInput').value ;
+    const zip = template.zipOptions.get();
+    const search = (zip) ? template.find('#searchInput').value : 
+      (state) ? template.find('#state').value : 
+      cityStateFormat(template.find('#searchInput').value, template.find('#state').value) ;
+    // const search = (state) ? template.find('#state').value : template.find('#searchInput').value ;
     
     const preference = template.find('#searchPreference').value;
-    const searchFormat = formatSearch(search);
+    let searchFormat = "";
+    if(preference != "locality") {
+      searchFormat = formatSearch(search);
+    } else {
+      searchFormat = search;
+    }
 
     const searchUrl = `locations?${preference}=${searchFormat}`;
     const url = replaceSpaces(searchUrl);
 
     Meteor.call('brewerySearch', url, (error, response) => {
       if (error) {
-        console.log(error);
         throw new Meteor.Error();
       }
       
