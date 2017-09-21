@@ -8,8 +8,4 @@ npm-debug.log*
 .DS_Store
 
 # Settings files
-settings*.json
-developement.settings.json
-
-# Test Files
-examples.*
+*settings*.json
