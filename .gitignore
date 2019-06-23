@@ -104,3 +104,6 @@ env.json
 
 # version 1 files
 meteor/
+
+# webpack
+.webpack
