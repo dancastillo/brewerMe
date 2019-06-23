@@ -20,8 +20,8 @@ provider:
     DB: ${self:custom.env.DB}
 functions:
   app:
-    handler: handler.hello
-    # handler: server.run
+    # handler: handler.hello
+    handler: server.run
     events:
       - http:
           path: /
