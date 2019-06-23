@@ -1,0 +1,26 @@
+service: brewerme-app
+app: brewerme
+custom: 
+  secrets: ${file(env.json)}
+plugins:
+  - serverless-offline
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${self:custom.env.NODE_ENV}
+  region: us-east-1
+  environment:
+    NODE_ENV: ${self:custom.env.NODE_ENV}
+    DB: ${self:custom.env.DB}
+functions:
+  app:
+    handler: server.run
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
