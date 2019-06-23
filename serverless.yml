@@ -1,9 +1,15 @@
 service: brewerme-app
 app: brewerme
-custom: 
-  secrets: ${file(env.json)}
 plugins:
   - serverless-offline
+  - serverless-webpack
+custom: 
+  env: ${file(env.json)}
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+package:
+  individually: true
 provider:
   name: aws
   runtime: nodejs10.x
@@ -14,7 +20,8 @@ provider:
     DB: ${self:custom.env.DB}
 functions:
   app:
-    handler: server.run
+    handler: handler.hello
+    # handler: server.run
     events:
       - http:
           path: /
