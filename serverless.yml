@@ -1,0 +1,33 @@
+service: brewerme-app
+app: brewerme
+plugins:
+  - serverless-offline
+  - serverless-webpack
+custom: 
+  env: ${file(env.json)}
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+package:
+  individually: true
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: ${self:custom.env.NODE_ENV}
+  region: us-east-1
+  environment:
+    NODE_ENV: ${self:custom.env.NODE_ENV}
+    DB: ${self:custom.env.DB}
+functions:
+  app:
+    # handler: handler.hello
+    handler: server.run
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
