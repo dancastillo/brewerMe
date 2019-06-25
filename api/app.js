@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
 
-import routes from './routes';
+import { routes } from './routes';
 import db from './db';
 
 const app = express();
@@ -12,6 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(helmet());
 
-app.use('/api', routes);
+app.get('/api', routes);
 
 export default app;
