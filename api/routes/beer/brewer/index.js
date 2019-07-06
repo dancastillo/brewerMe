@@ -1,11 +1,17 @@
-import axios, { getAllBrewers } from './../axios';
+import { getAllBrewers } from './../axios';
+import { getData } from '../../../utils/helpers';
+import { SUCCESS_CODE, SERVER_ERROR_CODE, SERVER_ERROR_RESPONSE } from '../../../utils/statusCodes';
 
 export const getBrewers = async (req, res, next) => {
   try {
-    let response = await getAllBrewers();
-    const { data } = response.data;
-    res.status(200).send(data);
+    // API call
+    const response = await getAllBrewers();
+
+    // Handle response
+    const data = getData(response);
+
+    res.status(SUCCESS_CODE).send(data);
   } catch (error) {
-    res.status(500).send({ error: error.message })
+    res.status(SERVER_ERROR_CODE).send(SERVER_ERROR_RESPONSE);
   }
 }
