@@ -1,5 +1,5 @@
 import express from 'express';
-import axios from '../routes/axios';
+import axios from '../routes/beer/axios';
 
 const brewerController = express.Router();
 
