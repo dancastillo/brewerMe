@@ -1,8 +1,7 @@
-export const SUCCESS_CODE = 200;
-export const NOT_FOUND_CODE = 500;
+import { SUCCESS_CODE } from "./statusCodes";
 
 export const getData = (response) => {
-  return response.data;
+  return (response.data) ? response.data : data;
 }
 
 export const getLatLong = (results) => {

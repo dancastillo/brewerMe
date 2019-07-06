@@ -24,5 +24,12 @@ export const getAllBrewers = () => {
   return axios.get('/brewer');
 }
 
+/**
+ * @method get
+ */
+export const getAllBeers = () => {
+  return axios.get('/beer');
+}
+
 export default axios;
 
