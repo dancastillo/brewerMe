@@ -25,9 +25,9 @@ export const getLocation = async (req, res) => {
     const nearbyResults = await getNearByLocations(url);
   
     // get data from results
-    const data = getData(nearbyResults);
+    const locationData = getData(nearbyResults);
 
-    res.status(status).send(data);
+    res.status(status).send(locationData);
   } catch (error) {
     res.status(500).send({ error: error.message })
   }

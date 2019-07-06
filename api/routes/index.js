@@ -8,8 +8,4 @@ router.use('/brewers', brewerController);
 
 router.use('/location', locationController);
 
-router.get('/', (req, res) => {
-  res.send('works');
-})
-
 export default router;

@@ -16,5 +16,13 @@ export const getNearByLocations = (url) => {
   return axios.get(url);
 }
 
+/**
+ * Beer API get brewers
+ * @methods get
+ */
+export const getAllBrewers = () => {
+  return axios.get('/brewer');
+}
+
 export default axios;
 
