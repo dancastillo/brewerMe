@@ -1,6 +1,8 @@
 import { getLongLat } from "../../geolocation";
-import axios, { LOCATION_URL, getNearByLocations } from './../axios';
-import { setUpQueryParams, getData } from "../../../utils/helpers";
+import { getNearByLocations } from './../axios';
+import { getData } from "../../../utils/helpers";
+import { SUCCESS_CODE, SERVER_ERROR_CODE, SERVER_ERROR_RESPONSE } from "../../../utils/statusCodes";
+import { getNearByLocationsUrl } from "./getUrl";
 
 /**
  * Return lat, long for a given address
@@ -27,26 +29,8 @@ export const getLocation = async (req, res) => {
     // get data from results
     const locationData = getData(nearbyResults);
 
-    res.status(status).send(locationData);
+    res.status(SUCCESS_CODE).send(locationData);
   } catch (error) {
-    res.status(500).send({ error: error.message })
+    res.status(SERVER_ERROR_CODE).send(SERVER_ERROR_RESPONSE)
   }
 }
-
-/**
- * @param object locObj 
- * @param null|integer radius 
- */
-const getNearByLocationsUrl = (locObj, radius) => {
-
-  const { lat, lng } = locObj;
-  const queryParams = { latitude: lat, longtude: lng };
-
-  // if radius is set then add to queryParams
-  if (radius) {
-    queryParams.radius = radius;
-  }
-
-  return setUpQueryParams(LOCATION_URL, queryParams);
-}
-
