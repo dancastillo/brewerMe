@@ -3,6 +3,7 @@ import { getNearByLocations } from './../axios';
 import { getData } from "../../../utils/helpers";
 import { SUCCESS_CODE, SERVER_ERROR_CODE, SERVER_ERROR_RESPONSE } from "../../../utils/statusCodes";
 import { getNearByLocationsUrl } from "./getUrl";
+import { addLocationRequest } from "./location";
 
 /**
  * Return lat, long for a given address
@@ -32,5 +33,15 @@ export const getLocation = async (req, res) => {
     res.status(SUCCESS_CODE).send(locationData);
   } catch (error) {
     res.status(SERVER_ERROR_CODE).send(SERVER_ERROR_RESPONSE)
+  }
+}
+
+export const addLocation = async (req, res) => {
+  try {
+    const results = await addLocationRequest(req.body);
+
+    res.status(SUCCESS_CODE).send(results);
+  } catch (error) {
+    res.status(SERVER_ERROR_CODE).send(SERVER_ERROR_RESPONSE);
   }
 }
