@@ -1,10 +1,19 @@
-import express from 'express';
-import { getLocation, addLocation } from '../routes/beer/location';
+import express from "express";
+import {
+  getNearbyLocation,
+  addLocation,
+  addAddressToALocation,
+  getLocationByLocationId
+} from "../routes/beer/location";
 
 const locationController = express.Router();
 
-locationController.get('/', getLocation);
+locationController.get("/", getNearbyLocation);
 
-locationController.post('/', addLocation);
+locationController.get("/", getLocationByLocationId);
+
+locationController.post("/", addLocation);
+
+locationController.post("/", addAddressToALocation);
 
 export default locationController;
