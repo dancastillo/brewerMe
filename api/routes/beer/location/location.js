@@ -2,17 +2,28 @@ import axios, { LOCATION_URL } from './../axios';
 
 /**
  * Get Nearby locations
+ * @method get
  * @param {string} url 
  */
 export const getNearByLocations = (url) => {
   return axios.get(url);
-}
+};
+
+/**
+ * Retrieve a location
+ * @method get
+ * @param {string} id
+ */
+export const retrieve = (id) => {
+  return axios.get(`/location/${id}`);
+};
 
 /**
  * Add location
+ * @method post
  * @param {object} params 
  */
-export const add = (params) => {
+export const addLocation = (params) => {
   console.log(params);
   const options = {
     headers: {
@@ -22,19 +33,11 @@ export const add = (params) => {
   };
 
   return axios.post(LOCATION_URL, params, options)
-}
-
-
-/**
- * Retrieve a location
- * @param {string} locationId 
- */
-export const retrieve = (locationId) => {
-  return axios.get(`/location/${locationId}`);
-}
+};
 
 /**
- * Add address to exisiting location
+ * Add address to existing location
+ * @method post
  * @param {string} locationId 
  * @param {object} params 
  */
@@ -47,4 +50,4 @@ export const addAddressToLocation = (locationId, params) => {
   };
 
   axios.post(`${LOCATION_URL}/${locationId}`, params, options);
-}
+};
