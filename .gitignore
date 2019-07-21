@@ -107,3 +107,6 @@ meteor/
 
 # webpack
 .webpack
+
+# ide settings
+.idea

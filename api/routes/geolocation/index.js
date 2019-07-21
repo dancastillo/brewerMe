@@ -15,7 +15,7 @@ export const getLongLat = async (address) => {
   
   // Handle response
   const results = getLatLong(response);
-  const { status, data } = results;
+  const { data } = results;
 
-  return { status, data };
-}
+  return { data };
+};
