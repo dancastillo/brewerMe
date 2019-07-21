@@ -1,19 +1,19 @@
 import express from "express";
 import {
-  getNearbyLocation,
-  addLocation,
-  addAddressToALocation,
-  getLocationByLocationId
+  getNearby,
+  add,
+  addAddress,
+  getById
 } from "../routes/beer/location";
 
 const locationController = express.Router();
 
-locationController.get("/", getNearbyLocation);
+locationController.get("/nearby", getNearby);
 
-locationController.get("/", getLocationByLocationId);
+locationController.get("/:id", getById);
 
-locationController.post("/", addLocation);
+locationController.post("/add", add);
 
-locationController.post("/", addAddressToALocation);
+locationController.post("/addAddress", addAddress());
 
 export default locationController;
