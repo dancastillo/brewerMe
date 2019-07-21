@@ -2,13 +2,14 @@ import { LOCATION_URL } from "../axios";
 import { setUpQueryParams } from "../../../utils/helpers";
 
 /**
- * @param object locObj 
- * @param null|integer radius 
+ * @param locObj
+ * @param radius
+ * @returns {string}
  */
 export const getNearByLocationsUrl = (locObj, radius) => {
 
   const { lat, lng } = locObj;
-  const queryParams = { latitude: lat, longtude: lng };
+  const queryParams = { latitude: lat, longitude: lng };
 
   // if radius is set then add to queryParams
   if (radius) {
@@ -16,4 +17,4 @@ export const getNearByLocationsUrl = (locObj, radius) => {
   }
 
   return setUpQueryParams(LOCATION_URL, queryParams);
-}
+};
