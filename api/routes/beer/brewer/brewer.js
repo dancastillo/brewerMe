@@ -1,17 +1,11 @@
 import axios,
 {
+  options,
   BEERS_BY_BREWER_URL,
   BREWER_URL, COUNT_BREWER_URL,
   GET_BREWER_URL,
   LOCATIONS_BY_BREWER_URL
 } from './../axios';
-
-const options = {
-  headers: {
-    'accept': 'application/json',
-    'content-type': 'application/json'
-  }
-};
 
 /**
  * Beer API get brewers
