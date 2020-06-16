@@ -1,6 +1,8 @@
 import express, { Request, Response } from "express";
 import next from "next";
 
+import routes from "./routes";
+
 const dev: boolean = process.env.NODE_ENV !== "production";
 const port = process.env.PORT || 3000;
 
@@ -11,6 +13,8 @@ const handle = app.getRequestHandler();
     try {
         await app.prepare();
         const server = express();
+
+        server.use('/api', routes);
 
         server.all("*", (req: Request, res: Response) => {
             return handle(req, res);
