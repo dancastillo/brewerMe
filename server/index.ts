@@ -14,13 +14,13 @@ const handle = app.getRequestHandler();
         await app.prepare();
         const server = express();
 
-        server.use('/api', routes);
+        server.use("/api", routes);
 
         server.all("*", (req: Request, res: Response) => {
             return handle(req, res);
         });
 
-        server.listen(port, (err?: any) => {
+        server.listen(port, (err?: Error) => {
             if (err) throw err;
 
             console.log(`> Ready on localhost: ${port} - env ${process.env.NODE_ENV}`);
