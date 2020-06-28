@@ -3,6 +3,8 @@ import next from "next";
 
 import routes from "./routes";
 
+import "./lib/env";
+
 const dev: boolean = process.env.NODE_ENV !== "production";
 const port = process.env.PORT || 3000;
 
