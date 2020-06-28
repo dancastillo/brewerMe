@@ -2,10 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
+    "target": "es6",
     "outDir": "dist",
     "noEmit": false,
     "rootDir": "server",
     "strict": true
   },
-  "include": ["server/**/*"]
+  "include": ["server/**/*.ts"]
 }
