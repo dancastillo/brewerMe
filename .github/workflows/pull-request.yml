@@ -1,0 +1,21 @@
+name: Push Workflow
+on: [push]
+jobs:
+  test:
+    name: Test on node on ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.18'
+          registry-url: https://registry.npmjs.org
+      - name: install
+        run: npm install
+      - name: lint
+        run: npm run lint
+      - name: build
+        run: npm run build
+      - name: test
+        run: npm test
