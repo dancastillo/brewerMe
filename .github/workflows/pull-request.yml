@@ -1,5 +1,5 @@
-name: Push Workflow
-on: [push]
+name: Pull Requst Workflow
+on: [pull_request]
 jobs:
   test:
     name: Test on node on ubuntu
