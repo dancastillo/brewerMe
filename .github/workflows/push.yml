@@ -1,5 +1,5 @@
-name: Push and Pull Request Workflow
-on: [push, pull_request]
+name: Push Workflow
+on: [push]
 jobs:
   test:
     name: Test app on ubuntu
