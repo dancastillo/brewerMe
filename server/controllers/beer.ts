@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
+
 /**
  * @param {Request} req
  * @param {Response} res
  * @return Response
  */
-export const getLocation = (req: Request, res: Response) => {
-    res.send("get nearby locations");
+export const getBeers = (req: Request, res: Response) => {
+    res.send("get 100 beers");
 };
 
 /**
@@ -13,6 +14,6 @@ export const getLocation = (req: Request, res: Response) => {
  * @param {Response} res
  * @return Response
  */
-export const getLocationById = (req: Request, res: Response) => {
-    res.send("get location by id");
+export const getBeerById = (req: Request, res: Response) => {
+    res.send("get beer by id");
 };
