@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 /**
  * @param {Request} req
  * @param {Response} res
- * @return void
+ * @return Response
  */
 export const getBeers = (req: Request, res: Response) => {
     res.send("get 100 beers");
@@ -12,7 +12,7 @@ export const getBeers = (req: Request, res: Response) => {
 /**
  * @param {Request} req
  * @param {Response} res
- * @return void
+ * @return Response
  */
 export const getBeerById = (req: Request, res: Response) => {
     res.send("get beer by id");
