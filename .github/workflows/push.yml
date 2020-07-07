@@ -12,7 +12,7 @@ jobs:
           node-version: '12.18'
           registry-url: https://registry.npmjs.org
       - name: install npm packages
-          run: npm install
+        run: npm install
       - name: run linter
         run: npm run lint:fix
       - name: build - build server backend
