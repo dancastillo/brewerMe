@@ -1,17 +1,21 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
+
 import * as location from "../controllers/location";
+import * as brewery from "../controllers/brewery";
+import * as beer from "../controllers/beer";
 
-const router: Router = Router();
+const routes: Router = Router();
 
-router.get("/location",  location.getLocation);
+// Location routes
+routes.get("/location",  location.getLocation);
+routes.get("/location/:id",  location.getLocationById);
 
-/**
- * @param {Request} req
- * @param {Response} res
- * @return void
- */
-router.get("/hello", (req: Request, res: Response): void => {
-    res.send("hello welcome to the api");
-});
+// Brewery routes
+routes.get("/brewery",  brewery.getBrewery);
+routes.get("/brewery/:id",  brewery.getBreweryById);
 
-export default router;
+// Beer routes
+routes.get("/beer",  beer.getBeers);
+routes.get("/beer/:id",  beer.getBeerById);
+
+export default routes;
