@@ -1,0 +1,13 @@
+import "./../lib/env";
+
+/**
+ * @param {string} address
+ * @return string
+ */
+export const getLocationUrl = (address) => {
+    const locationApi = process.env.LOCATION_API;
+    const locationApiKey = process.env.LOCATION_API_KEY;
+    const loc = encodeLocationQueryParam(address);
+
+    return `${locationApi}?address=${loc}&key=${locationApiKey}`
+};
