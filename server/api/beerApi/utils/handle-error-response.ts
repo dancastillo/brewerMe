@@ -1,6 +1,7 @@
 import { IApiError } from "../../../interfaces/IApiError";
+import { AxiosError } from "axios";
 
-export const handleErrorResponse = (err): IApiError => {
+export const handleErrorResponse = (err: AxiosError): IApiError => {
     const { data } = err.response || {};
     const { error, error_msg } = data || {};
     const { status } = err.response || {};

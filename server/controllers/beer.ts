@@ -3,6 +3,7 @@ import { getBeers, getBeerById } from "../api/beerApi/api";
 import { IAxiosResponse } from "../api/beerApi/interfaces/IAxiosResponse";
 import { handleAxiosResponse } from "../utils/handle-axios-response";
 import { IApiResponse } from "../interfaces/IApiResponse";
+import { handleErrorResponse } from "../api/beerApi/utils/handle-error-response";
 
 /**
  * @param {Request} req
@@ -16,6 +17,7 @@ export const get = async (req: Request, res: Response) => {
 
         res.send(response);
     } catch (err) {
+        handleErrorResponse(err);
         res.send(err);
     }
 };
@@ -33,6 +35,7 @@ export const getById = async (req: Request, res: Response) => {
 
         res.send(response);
     } catch (err) {
-        console.log(err);
+        handleErrorResponse(err);
+        res.send(err);
     }
 };

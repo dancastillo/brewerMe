@@ -9,15 +9,15 @@ import { addIdToRoute } from "../../../server/utils/router-url";
 import { handleAxiosResponse } from "../../../server/utils/handle-axios-response";
 
 describe("GET for Brewery routes", () => {
-    const fakeId: string = "123456-1234-1234-1234567890";
+    const fakeId = "123456-1234-1234-1234567890";
 
     it("should return 200 ok /api/brewery", (done) => {
         const breweries: IApiResponse = handleAxiosResponse(getResponse(getBreweryRoute()));
 
         request(app)
             .get(`/api${RouterPaths.BREWERY}`)
-            .set('Accept', 'application/json')
-            .expect('Content-Type', /json/)
+            .set("Accept", "application/json")
+            .expect("Content-Type", /json/)
             .expect(200)
             .expect((response: Response) => {
                 expect(response.body).toMatchObject(breweries);
@@ -31,8 +31,8 @@ describe("GET for Brewery routes", () => {
 
         request(app)
             .get(`/api${url}`)
-            .set('Accept', 'application/json')
-            .expect('Content-Type', /json/)
+            .set("Accept", "application/json")
+            .expect("Content-Type", /json/)
             .expect(200)
             .expect((response: Response) => {
                 expect(response.body).toMatchObject(brewery);

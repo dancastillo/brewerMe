@@ -3,7 +3,7 @@ import { addIdToRoute, createRouterPath } from "../../../server/utils/router-url
 
 describe("router-url", () => {
     const fakeId = "1234-56-7890";
-    const url: string = "/brewer.me";
+    const url = "/brewer.me";
 
     it("getRouteUrl", () => {
         expect(addIdToRoute(RouterPaths.BEER, fakeId)).toEqual(`${RouterPaths.BEER}/${fakeId}`);
@@ -21,7 +21,7 @@ describe("router-url", () => {
     });
 
     it("createRouterPath", () => {
-       const obj = {'latitude': 0, 'longitude': 0};
+       const obj = {"latitude": 0, "longitude": 0};
        expect(createRouterPath(url, obj)).toEqual(`${url}/latitude/0/longitude/0`);
     });
 });

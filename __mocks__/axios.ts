@@ -10,7 +10,7 @@ const axiosResponse: AxiosResponse = {
     headers: {},
 };
 
-const fakeId: string = "123456-1234-1234-1234567890";
+const fakeId = "123456-1234-1234-1234567890";
 
 export const getResponse = (url: string): IAxiosResponse => {
     switch (url) {

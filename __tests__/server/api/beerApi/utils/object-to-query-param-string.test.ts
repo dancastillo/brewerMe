@@ -2,7 +2,7 @@ import { objectToQueryParam } from "../../../../../server/api/beerApi/utils/obje
 
 describe("objectToQueryParam.ts", () => {
     test("objectToQueryParam", () => {
-        const url: string = "brewer.me";
+        const url = "brewer.me";
         const obj: {[key: string]: string} = {
             "brewer": "me",
             "objectTo": "queryParam"
@@ -11,5 +11,5 @@ describe("objectToQueryParam.ts", () => {
         const results = objectToQueryParam(url, obj);
 
         expect(results).toEqual(queryParam);
-    })
+    });
 });

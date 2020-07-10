@@ -9,9 +9,9 @@ import { RouterPaths } from "../../../server/routes/constants/router-paths";
 import { handleAxiosResponse } from "../../../server/utils/handle-axios-response";
 
 describe("GET for Brewery routes", () => {
-    const fakeId: string = "123456-1234-1234-1234567890";
-    const fakeLatitude: number = 0;
-    const fakeLongitude: number = 0;
+    const fakeId = "123456-1234-1234-1234567890";
+    const fakeLatitude = 0;
+    const fakeLongitude = 0;
 
     it("should return 200 ok /api/location", (done) => {
         const url = addIdToRoute(RouterPaths.LOCATION_ID, fakeId);
@@ -19,8 +19,8 @@ describe("GET for Brewery routes", () => {
 
         request(app)
             .get(`/api${url}`)
-            .set('Accept', 'application/json')
-            .expect('Content-Type', /json/)
+            .set("Accept", "application/json")
+            .expect("Content-Type", /json/)
             .expect(200)
             .expect((response: Response) => {
                 expect(response.body).toMatchObject(location);
@@ -42,8 +42,8 @@ describe("GET for Brewery routes", () => {
 
         request(app)
             .get(`/api${url}`)
-            .set('Accept', 'application/json')
-            .expect('Content-Type', /json/)
+            .set("Accept", "application/json")
+            .expect("Content-Type", /json/)
             .expect(200)
             .expect((response: Response) => {
                 expect(response.body).toMatchObject(nearbyLocations);

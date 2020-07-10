@@ -16,9 +16,9 @@ import {
 
 
 describe("Beer Api", () => {
-    const fakeId: string = "123456-1234-1234-1234567890";
-    const fakeLatitude: number = 0;
-    const fakeLongitude: number = 0;
+    const fakeId = "123456-1234-1234-1234567890";
+    const fakeLatitude = 0;
+    const fakeLongitude = 0;
 
     test("getBeers", async () => {
         const beers: IAxiosResponse = getResponse(getBeerRoute());

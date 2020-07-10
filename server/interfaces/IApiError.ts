@@ -1,10 +1,10 @@
 export interface IApiError {
-    error: boolean;
-    error_msg: string;
-    status: number;
-    url: string;
-    request?: any;
-    message?: string|any;
+    error: boolean|undefined;
+    error_msg: string|undefined;
+    status: number|undefined;
+    url: string|undefined;
+    request?: string|undefined;
+    message?: string|undefined;
     valid_state?: {
         name?: string;
         url?: string;
