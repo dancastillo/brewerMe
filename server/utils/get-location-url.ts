@@ -1,4 +1,5 @@
 import "./../lib/env";
+import { encodeLocationQueryParam } from "./encode-query-param";
 
 /**
  * @param {string} address
@@ -9,5 +10,5 @@ export const getLocationUrl = (address) => {
     const locationApiKey = process.env.LOCATION_API_KEY;
     const loc = encodeLocationQueryParam(address);
 
-    return `${locationApi}?address=${loc}&key=${locationApiKey}`
+    return `${locationApi}?address=${loc}&key=${locationApiKey}`;
 };
