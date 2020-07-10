@@ -1,4 +1,5 @@
-import { getUrl } from "../../../server/utils";
+import { encodeLocationQueryParam } from "../../../server/utils/encode-query-param";
+
 
 describe("Utils tests", () => {
     test("Testing getUrl from Utils dir", () => {
@@ -6,7 +7,7 @@ describe("Utils tests", () => {
         const testStr = "This is a test";
         const urlStr = "This+is+a+test";
 
-        const urlString = getUrl(testStr);
+        const urlString = encodeLocationQueryParam(testStr);
 
         expect(urlString).toEqual(urlStr);
     });
