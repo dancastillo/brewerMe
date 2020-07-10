@@ -1,86 +1,78 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 
 import { config } from "./utils/config";
-import { IApiResponse } from "./interfaces/IApiResponse";
-import { handleError, handleResponse } from "./utils/response";
-import * as routePaths from "./constants/routes-paths";
+import { handleErrorResponse } from "./utils/handle-error-response";
+import * as routePaths from "./utils/route-paths";
+import { IAxiosResponse } from "./interfaces/IAxiosResponse";
 
-export const getBeers = async (): Promise<IApiResponse> => {
+export const getBeers = async (): Promise<IAxiosResponse> => {
     try {
         const url: string = routePaths.getBeerRoute();
 
-        // console.log(httpClient);
-        const response: AxiosResponse = await axios.get(url, config);
-
-        return handleResponse(response);
+        return await axios.get(url, config);
     } catch (err) {
         console.log(err);
-        await handleError(err);
+        await handleErrorResponse(err);
     }
 
     throw Error;
 };
 
-export const getBeerById = async (id: string): Promise<IApiResponse> => {
+export const getBeerById = async (id: string): Promise<IAxiosResponse> => {
     try {
         const url: string = routePaths.getBeerByIdRoute(id);
-        const response: AxiosResponse = await axios.get(url, config);
 
-        return handleResponse(response);
+        return await axios.get(url, config);
     } catch (err) {
-        await handleError(err);
+        await handleErrorResponse(err);
     }
 
     throw Error;
 };
 
-export const getBrewery = async (): Promise<IApiResponse> => {
+export const getBrewery = async (): Promise<IAxiosResponse> => {
     try {
         const url: string = routePaths.getBreweryRoute();
-        const response: AxiosResponse = await axios.get(url, config);
 
-        return handleResponse(response);
+        return await axios.get(url, config);
     } catch (err) {
-        await handleError(err);
+        await handleErrorResponse(err);
     }
 
     throw Error;
 };
 
-export const getBreweryById = async (id: string): Promise<IApiResponse> => {
+export const getBreweryById = async (id: string): Promise<IAxiosResponse> => {
     try {
         const url: string = routePaths.getBreweryByIdRoute(id);
-        const response: AxiosResponse = await axios.get(url, config);
 
-        return handleResponse(response);
+        return await axios.get(url, config);
     } catch (err) {
-        await handleError(err);
+        await handleErrorResponse(err);
     }
 
     throw Error;
 };
 
-export const getLocationById = async (id: string): Promise<IApiResponse> => {
+export const getLocationById = async (id: string): Promise<IAxiosResponse> => {
     try {
-        const url: string = routePaths.getLocationById(id);
-        const response: AxiosResponse = await axios.get(url, config);
+        const url: string = routePaths.getLocationByIdRoute(id);
 
-        return handleResponse(response);
+        return await axios.get(url, config);
     } catch (err) {
-        await handleError(err);
+        await handleErrorResponse(err);
     }
 
     throw Error;
 };
 
-export const getNearbyLocation = async (latitude: number, longitude: number): Promise<IApiResponse> => {
+export const getLocationsNearby = async (latitude: number, longitude: number): Promise<IAxiosResponse> => {
     try {
-        const url: string = routePaths.getLocationNearby(latitude, longitude);
-        const response: AxiosResponse = await axios.get(url, config);
+        const url: string = routePaths.getLocationsNearbyRoute(latitude, longitude);
 
-        return handleResponse(response);
+        return await axios.get(url, config);
     } catch (err) {
-        await handleError(err);
+        await handleErrorResponse(err);
     }
 
     throw Error;
