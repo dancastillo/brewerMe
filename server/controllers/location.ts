@@ -50,9 +50,9 @@ export const getLatitudeLongitude = async (req: Request, res: Response) => {
         const { address } = req.query;
 
         if (typeof address === "string") {
-            const response: IAxiosResponse = await getLocation(address);
-
-            console.log(response);
+            const results: IAxiosResponse = await getLocation(address);
+            const response: IApiResponse = handleAxiosResponse(results);
+            
             res.send(response.data);
         } else {
             throw Error('Query Param "address" should be a string');
