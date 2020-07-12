@@ -6,5 +6,6 @@ export enum RouterPaths {
     LOCATION = "/location",
     LOCATION_ID = "/location/:id",
     LOCATION_NEARBY_BASE = "/location/nearby",
-    LOCATION_NEARBY = "/location/nearby/latitude/:latitude/longitude/:longitude"
+    LOCATION_NEARBY = "/location/nearby/latitude/:latitude/longitude/:longitude",
+    GET_LOCATION = "/getLocation"
 }
