@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { config } from "./utils/config";
 import * as routePaths from "./utils/route-paths";
-import { IAxiosResponse } from "./interfaces/IAxiosResponse";
+import { IAxiosResponse } from "../interfaces/IAxiosResponse";
 
 export const getBeers = async (): Promise<IAxiosResponse> => {
     const url: string = routePaths.getBeerRoute();

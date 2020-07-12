@@ -1,4 +1,4 @@
-import { objectToQueryParam } from "./object-to-query-param-string";
+import { objectToQueryParam } from "../../utils/object-to-query-param-string";
 
 import { QUERY_PARAMS } from "../constants/query-params";
 import { ROUTE_PATHS } from "../constants/routes";
