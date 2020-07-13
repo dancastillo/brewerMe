@@ -1,6 +1,6 @@
 import request, { Response } from "supertest";
 import app from "../../../server/app";
-import { getResponse } from "../../../__mocks__/axios";
+import { getResponse } from "../../../__mocks__/axiosResponse";
 
 import { IApiResponse } from "../../../server/interfaces/IApiResponse";
 import { getBeerByIdRoute, getBeerRoute } from "../../../server/api/beerApi/utils/route-paths";
