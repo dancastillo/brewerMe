@@ -3,7 +3,6 @@ import { getLocationById, getLocationsNearby } from "../api/beerApi/api";
 import { IAxiosResponse } from "../api/interfaces/IAxiosResponse";
 import { handleAxiosResponse } from "../utils/handle-axios-response";
 import { IApiResponse } from "../interfaces/IApiResponse";
-import { ILocationResponse } from "../api/locationApi/interfaces/ILocationResponse";
 import { getLocation } from "../api/locationApi/locationApi";
 
 /**
@@ -52,12 +51,12 @@ export const getLatitudeLongitude = async (req: Request, res: Response) => {
         if (typeof address === "string") {
             const results: IAxiosResponse = await getLocation(address);
             const response: IApiResponse = handleAxiosResponse(results);
-            
+
             res.send(response.data);
         } else {
-            throw Error('Query Param "address" should be a string');
+            throw Error("Query Param 'address' should be a string");
         }
     } catch (err) {
         console.log(err);
     }
-}
+};

@@ -1,4 +1,4 @@
-import { objectToQueryParam } from "../../../../../server/api/beerApi/utils/object-to-query-param-string";
+import { objectToQueryParam } from "../../../../../server/api/utils/object-to-query-param-string";
 
 describe("objectToQueryParam.ts", () => {
     test("objectToQueryParam", () => {
