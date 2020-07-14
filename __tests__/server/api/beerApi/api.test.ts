@@ -1,11 +1,11 @@
 import { IApiResponse } from "../../../../server/interfaces/IApiResponse";
-import { getResponse } from "../../../../__mocks__/axios";
+import { getResponse } from "../../../../__mocks__/axiosResponse";
 import {
     getBeerByIdRoute,
     getBeerRoute, getBreweryByIdRoute, getBreweryRoute, getLocationByIdRoute,
     getLocationsNearbyRoute
 } from "../../../../server/api/beerApi/utils/route-paths";
-import { IAxiosResponse } from "../../../../server/api/beerApi/interfaces/IAxiosResponse";
+import { IAxiosResponse } from "../../../../server/api/interfaces/IAxiosResponse";
 import {
     getBeerById,
     getBeers,

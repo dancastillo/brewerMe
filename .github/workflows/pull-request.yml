@@ -17,7 +17,7 @@ jobs:
         run: npm run lint:fix
       - name: build - build server backend
         run: npm run build
-     - name: build - build next frontend
+      - name: build - build next frontend
         run: npm run next:build
       - name: test
         run: npm test

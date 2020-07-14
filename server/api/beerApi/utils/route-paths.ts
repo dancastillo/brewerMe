@@ -1,7 +1,13 @@
-import { objectToQueryParam } from "./object-to-query-param-string";
+import { objectToQueryParam } from "../../utils/object-to-query-param-string";
 
 import { QUERY_PARAMS } from "../constants/query-params";
 import { ROUTE_PATHS } from "../constants/routes";
+
+import "../../../lib/env";
+import { encodeLocationQueryParam } from "../../../utils/encode-query-param";
+
+const key: string = process.env.LOCATION_API_KEY || "";
+const apiUrl: string  = process.env.LOCATION_API || "";
 
 /**
  * @return string
@@ -47,3 +53,10 @@ export const getLocationsNearbyRoute = (latitude: number, longitude: number): st
             [QUERY_PARAMS.LONGITUDE]: `${longitude}`
         }
     );
+
+export const getLocationApiRoute = (address: string): string => {
+    address = encodeLocationQueryParam(address);
+    const urlObject = { address, key };
+
+    return objectToQueryParam(apiUrl, urlObject);
+};
