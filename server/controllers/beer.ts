@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { getBeers, getBeerById } from "../api/beerApi/api";
-import { IAxiosResponse } from "../api/beerApi/interfaces/IAxiosResponse";
+import { IAxiosResponse } from "../api/interfaces/IAxiosResponse";
 import { handleAxiosResponse } from "../utils/handle-axios-response";
 import { IApiResponse } from "../interfaces/IApiResponse";
 import { handleErrorResponse } from "../api/beerApi/utils/handle-error-response";

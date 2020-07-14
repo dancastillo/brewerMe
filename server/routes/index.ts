@@ -20,4 +20,7 @@ routes.get(RouterPaths.BREWERY_ID,  brewery.getById);
 routes.get(RouterPaths.LOCATION_ID,  location.getById);
 routes.get(RouterPaths.LOCATION_NEARBY,  location.getNearby);
 
+// Get Location route
+routes.get(RouterPaths.GET_LOCATION, location.getLatitudeLongitude);
+
 export default routes;

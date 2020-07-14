@@ -1,4 +1,4 @@
-import { getResponse } from "../../../__mocks__/axios";
+import { getResponse } from "../../../__mocks__/axiosResponse";
 import { getBeerRoute } from "../../../server/api/beerApi/utils/route-paths";
 import { IApiResponse } from "../../../server/interfaces/IApiResponse";
 import { handleAxiosResponse } from "../../../server/utils/handle-axios-response";
