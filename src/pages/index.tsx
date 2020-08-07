@@ -1,15 +1,15 @@
 import React, { ReactElement } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+
+import { Container } from "@styled";
+import Navbar from "../components/navbar";
+import Search from "../components/search";
 
 const IndexPage: React.FC = (): ReactElement => {
     return (
         <>
-            <Container className="container-fluid">
-                <Row className="pt-5">
-                    <Col className="offset-3 col-3">
-                        <div>Hello world.</div>
-                    </Col>
-                </Row>
+            <Navbar />
+            <Container>
+                <Search />
             </Container>
         </>
     );
