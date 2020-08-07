@@ -17,10 +17,31 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "module": "esnext"
+    "module": "esnext",
+    "baseUrl": "src",
+    "paths": {
+      "@definitions/*": ["lib/definitions/*"],
+      "@definitions": ["lib/definitions"],
+      "@interfaces": ["lib/interfaces"],
+      "@interfaces/*": ["lib/interfaces/*"],
+      "@redux": ["lib/redux"],
+      "@redux/*": ["lib/redux/*"],
+      "@static/*": ["public/static/*"],
+      "@styled/*": ["lib/styled/*"],
+      "@styled": ["lib/styled"],
+      "@constants/*": ["lib/constants/*"],
+      "@constants": ["lib/constants"]
+    }
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "coverage",
+    "__mocks__",
+    "__test__",
+    ".next",
+    ".github",
+    "dist",
+    "out"
   ],
   "include": [
     "next-env.d.ts",
