@@ -1,0 +1,13 @@
+import React from "react";
+
+export default function TableHeader({ headers }) {
+    return (
+        <thead>
+            <tr>
+                {headers.map((header: string) => {
+                    return <th key="option-name-th">{header}</th>;
+                })}
+            </tr>
+        </thead>
+    );
+}
