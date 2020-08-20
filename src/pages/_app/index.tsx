@@ -8,6 +8,8 @@ import { AppWithStore } from "@interfaces";
 import { wrapper } from "@redux";
 
 import "@static/css/main.scss";
+import { Container } from "react-bootstrap";
+import Navbar from "../../components/navbar";
 
 class BrewerMeApp extends App<AppWithStore> {
     static async getInitialProps({
@@ -26,7 +28,10 @@ class BrewerMeApp extends App<AppWithStore> {
 
         return (
             <ThemeProvider theme={theme}>
-                <Component {...pageProps} />
+                <Navbar />
+                <Container>
+                    <Component {...pageProps} />
+                </Container>
             </ThemeProvider>
         );
     }

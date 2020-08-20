@@ -26,7 +26,7 @@
       "@interfaces/*": ["lib/interfaces/*"],
       "@redux": ["lib/redux"],
       "@redux/*": ["lib/redux/*"],
-      "@static/*": ["public/static/*"],
+      "@static/*": ["../public/static/*"],
       "@styled/*": ["lib/styled/*"],
       "@styled": ["lib/styled"],
       "@constants/*": ["lib/constants/*"],
