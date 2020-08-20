@@ -3,9 +3,9 @@ import React from "react";
 import SocialMediaIcons from "../shared/sociaMediaIcons";
 import UrlButton from "../shared/urlButton";
 import BackButton from "../../back-button";
+import { IBeerCard } from "@interfaces/components/card/IBeer";
 
-
-export default function BeerCard({ beer }) {
+export default function BeerCard({ beer }: IBeerCard) {
     const { brewer } = beer;
     const { facebook_url, instagram_url, twitter_url } = brewer;
     const btnText = "Brewery Website";

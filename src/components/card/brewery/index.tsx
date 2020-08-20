@@ -3,8 +3,9 @@ import React from "react";
 import SocialMediaIcons from "../shared/sociaMediaIcons";
 import UrlButton from "../shared/urlButton";
 import BackButton from "../../back-button";
+import { IBreweryCard } from "@interfaces/components/card/IBrewery";
 
-export default function BreweryCard({ brewery }) {
+export default function BreweryCard({ brewery }: IBreweryCard) {
 
     const {
         name,

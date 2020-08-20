@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TableHeader({ headers }) {
+export default function TableHeader({ headers }: { headers: string[] }) {
     return (
         <thead>
             <tr>

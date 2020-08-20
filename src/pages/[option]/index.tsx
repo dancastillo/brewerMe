@@ -1,12 +1,17 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
 
-import { API_BY_OPTION } from "@constants/api";;
+import { API_BY_OPTION } from "@constants/api";
 import { getData } from "../../lib/utils/apiResponse";
 import TableDisplay from "../../components/table-display";
 import { Routes } from "@constants/routes";
 
-export default function Search({ response, option }) {
+interface Interface {
+    response: { data: {id: string, name: string}[] },
+    option: string
+}
+
+export default function Search({ response, option }: Interface) {
     const headers: string[] = (option === Routes.BEER)
         ? ["Beer"]
         : ["Brewery Name"];

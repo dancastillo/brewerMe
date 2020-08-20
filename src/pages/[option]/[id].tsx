@@ -17,11 +17,11 @@ interface Interface {
 export default function Search({response, option}: Interface) {
     if (option === Routes.BEER) {
         return (
-            <BeerCard beer={response}/>
+            <BeerCard beer={response as IBeer}/>
         );
     } else if (option === Routes.BREWERY) {
         return (
-            <BreweryCard brewery={response}/>
+            <BreweryCard brewery={response as IBrewery}/>
         );
     }
 

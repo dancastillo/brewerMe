@@ -12,3 +12,7 @@ export interface IBeer {
     brewer_verified: boolean;
     brewer: IBrewery;
 }
+
+export interface IBeerCard {
+    beer: IBeer;
+}

@@ -11,3 +11,7 @@ export interface IBrewery {
     twitter_url: string;
     instagram_url: string;
 }
+
+export interface IBreweryCard {
+    brewery: IBrewery;
+}

@@ -11,10 +11,10 @@ const API_URL = process.env.NODE_ENV === "development"
 
 /** MOCK SERVER ROUTES **/
 const BEER_API = `${API_URL}/beer`;
-const BEER_API_BY_ID = (id: string) => `${API_URL}/beerById`;
+const BEER_API_BY_ID = (id: string) => { id = ""; return `${API_URL}/beerById${id}`; };
 
 const BREWERY_API = `${API_URL}/brewery`;
-const BREWERY_API_BY_ID = (id: string) => `${API_URL}/breweryById`;
+const BREWERY_API_BY_ID = (id: string) => { id = ""; return `${API_URL}/breweryById${id}`; };
 /** END MOCK SERVER ROUTES **/
 
 // const BEER_API = `${API_URL}/beer`;
