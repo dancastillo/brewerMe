@@ -46,11 +46,15 @@ export const getLocationByIdRoute = (id: string): string => `${ROUTE_PATHS.GET_L
  * @return string
  */
 export const getLocationsNearbyRoute = (latitude: number, longitude: number): string =>
+    /**
+     * TODO added query param for search radius
+     */
     objectToQueryParam(
         ROUTE_PATHS.GET_LOCATION_NEARBY,
         {
             [QUERY_PARAMS.LATITUDE]: `${latitude}`,
-            [QUERY_PARAMS.LONGITUDE]: `${longitude}`
+            [QUERY_PARAMS.LONGITUDE]: `${longitude}`,
+            [QUERY_PARAMS.SEARCH_RADIUS]: "50"
         }
     );
 

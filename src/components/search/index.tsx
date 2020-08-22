@@ -49,7 +49,7 @@ export default function Search() {
 
     const submitSearch = ({searchValue, searchBy, city, state }: ISearchForm) => {
         if (searchBy === "location") {
-            Router.push(`/${searchBy}/${city}-${state}`);
+            Router.push(`/${searchBy}?city=${city}&state=${state}`);
         } else {
             Router.push(`/${searchBy}/${searchValue}`);
         }
