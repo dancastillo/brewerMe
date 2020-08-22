@@ -1,7 +1,7 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
 
-import { API_BY_ID } from "@constants/api";
+import { getDataById } from "@constants/api";
 import BreweryCard from "../../components/card/brewery";
 import { getData } from "../../lib/utils/apiResponse";
 import BeerCard from "../../components/card/beer";
@@ -29,7 +29,7 @@ export default function Search({response, option}: Interface) {
 
 export const getServerSideProps = async (ctx) => {
     const { id, option } = ctx.query;
-    const res = await fetch(API_BY_ID(id, option));
+    const res = await fetch(getDataById(id, option));
 
     const jsonResult = await res.json();
     const data = getData(jsonResult);

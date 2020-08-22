@@ -1,7 +1,7 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
 
-import { API_BY_OPTION } from "@constants/api";
+import { getDataByOption } from "@constants/api";
 import { getData } from "../../lib/utils/apiResponse";
 import TableDisplay from "../../components/table-display";
 import { Routes } from "@constants/routes";
@@ -25,7 +25,7 @@ export default function Search({ response, option }: Interface) {
 
 export const getServerSideProps = async (ctx) => {
     const { option } = ctx.query;
-    const res = await fetch(API_BY_OPTION(option));
+    const res = await fetch(getDataByOption(option));
     const jsonResult = await res.json();
     const data = getData(jsonResult);
 
