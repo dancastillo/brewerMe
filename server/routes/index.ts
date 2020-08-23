@@ -17,6 +17,7 @@ routes.get(RouterPaths.BREWERY,  brewery.get);
 routes.get(RouterPaths.BREWERY_ID,  brewery.getById);
 
 // Location routes
+routes.get(RouterPaths.LOCATION,  location.get);
 routes.get(RouterPaths.LOCATION_ID,  location.getById);
 routes.get(RouterPaths.LOCATION_NEARBY,  location.getNearby);
 

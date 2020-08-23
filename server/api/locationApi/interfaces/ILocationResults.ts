@@ -18,7 +18,7 @@ interface IBounds {
 
 interface IGeometry {
     bounds?: IBounds;
-    location: IBounds;
+    location: ILocation;
     location_type: LocationType;
     viewport: IBounds;
 }
