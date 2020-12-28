@@ -1,23 +1,23 @@
-import { RouterPaths } from "../routes/constants/router-paths";
+import { RouterPaths } from '../routes/constants/router-paths';
 
 const getRouterUrl = (str: string): string => {
     switch (str) {
-        case RouterPaths.BEER_ID:
+        case `${RouterPaths.BEER}${RouterPaths.BY_ID}`:
             return RouterPaths.BEER;
         case RouterPaths.BEER:
             return RouterPaths.BEER;
-        case RouterPaths.BREWERY_ID:
+        case `${RouterPaths.BREWERY}${RouterPaths.BY_ID}`:
             return RouterPaths.BREWERY;
         case RouterPaths.BREWERY:
             return RouterPaths.BREWERY;
-        case RouterPaths.LOCATION_ID:
+        case `${RouterPaths.LOCATION}${RouterPaths.BY_ID}`:
             return RouterPaths.LOCATION;
         case RouterPaths.LOCATION:
             return RouterPaths.LOCATION;
-        case RouterPaths.LOCATION_NEARBY:
-            return RouterPaths.LOCATION_NEARBY_BASE;
-        case RouterPaths.LOCATION_NEARBY_BASE:
-            return RouterPaths.LOCATION_NEARBY_BASE;
+        case `${RouterPaths.LOCATION}${RouterPaths.NEARBY}`:
+            return RouterPaths.NEARBY;
+        case `${RouterPaths.LOCATION}${RouterPaths.LOCATION_NEARBY}`:
+            return RouterPaths.NEARBY;
         default:
             return str;
     }
@@ -38,5 +38,5 @@ export const addIdToRoute = (path: string, id: string): string => {
  * @return string
  */
 export const createRouterPath = (path: string, obj: {[key: string]: number|string}): string => {
-    return `${getRouterUrl(path)}/` + Object.keys(obj).map(key => key + "/" + obj[key]).join("/");
+    return `${getRouterUrl(path)}/` + Object.keys(obj).map(key => key + '/' + obj[key]).join('/');
 };
