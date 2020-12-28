@@ -1,1 +1,1 @@
-export * from "@interfaces/pages/App";
+export * from '@interfaces/pages/App';

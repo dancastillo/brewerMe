@@ -1,13 +1,13 @@
-import React from "react";
-import fetch from "isomorphic-unfetch";
+import React from 'react';
+import fetch from 'isomorphic-unfetch';
 
-import { getDataById } from "@constants/api";
-import BreweryCard from "../../components/card/brewery";
-import { getData } from "../../lib/utils/apiResponse";
-import BeerCard from "../../components/card/beer";
-import { IBeer } from "@interfaces/components/card/IBeer";
-import { IBrewery } from "@interfaces/components/card/IBrewery";
-import { Routes } from "@constants/routes";
+import { getDataById } from '@constants/api';
+import BreweryCard from '../../components/card/brewery';
+import { getData } from '../../lib/utils/apiResponse';
+import BeerCard from '../../components/card/beer';
+import { IBeer } from '@interfaces/components/card/IBeer';
+import { IBrewery } from '@interfaces/components/card/IBrewery';
+import { Routes } from '@constants/routes';
 
 interface Interface {
     response: IBeer|IBrewery;

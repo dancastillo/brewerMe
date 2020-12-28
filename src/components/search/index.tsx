@@ -1,54 +1,54 @@
-import React from "react";
-import { Form, Formik } from "formik";
-import { object, string } from "yup";
-import { Button, Row } from "react-bootstrap";
-import FormInput from "../form/formInput";
-import Router from "next/router";
+import React from 'react';
+import { Form, Formik } from 'formik';
+import { object, string } from 'yup';
+import { Button, Row } from 'react-bootstrap';
+import FormInput from '../form/formInput';
+import Router from 'next/router';
 
 export default function Search() {
     const initialValidationSchema = {
         searchValue: string().required().min(2).max(100),
-        searchBy: string().oneOf(["brewer", "beer", "location"] as const).required(),
+        searchBy: string().oneOf(['brewer', 'beer', 'location'] as const).required(),
         city: string()
-            .when("searchBy", {
-                is: "location",
+            .when('searchBy', {
+                is: 'location',
                 then: string().required().min(2).max(50),
                 otherwise: string().notRequired().min(2).max(50),
             }),
         state: string()
-            .when("searchBy", {
-                is: "location",
+            .when('searchBy', {
+                is: 'location',
                 then: string().required().min(2).max(50),
                 otherwise: string().notRequired().min(2).max(50),
             }),
     };
 
     const initialValues = {
-        searchValue: "",
-        searchBy: "",
-        city: "",
-        state: ""
+        searchValue: '',
+        searchBy: '',
+        city: '',
+        state: ''
     };
 
     const inputs = [
-        {name: "searchValue", type: "text", label: "", placeholder: "Search for brewery, beer, by location", inputType: "text"},
-        {name: "searchBy", type: "select", label: "searchOptions", placeholder: "Choose an option...", inputType: "select"}
+        {name: 'searchValue', type: 'text', label: '', placeholder: 'Search for brewery, beer, by location', inputType: 'text'},
+        {name: 'searchBy', type: 'select', label: 'searchOptions', placeholder: 'Choose an option...', inputType: 'select'}
     ];
 
     const additionInputs = [
-        {name: "city", type: "text", label: "", placeholder: "City...", inputType: "text"},
-        {name: "state", type: "select", label: "states", placeholder: "Choose a State...", inputType: "select"}
+        {name: 'city', type: 'text', label: '', placeholder: 'City...', inputType: 'text'},
+        {name: 'state', type: 'select', label: 'states', placeholder: 'Choose a State...', inputType: 'select'}
     ];
 
     interface ISearchForm {
         searchValue: string;
-        searchBy: "brewer" | "beer" | "location";
+        searchBy: 'brewer' | 'beer' | 'location';
         city: string;
         state: string;
     }
 
     const submitSearch = ({searchValue, searchBy, city, state }: ISearchForm) => {
-        if (searchBy === "location") {
+        if (searchBy === 'location') {
             Router.push(`/${searchBy}?city=${city}&state=${state}`);
         } else {
             Router.push(`/${searchBy}/${searchValue}`);
@@ -78,7 +78,7 @@ export default function Search() {
                                 />
                             );
                         })}
-                        {values.searchBy === "location"
+                        {values.searchBy === 'location'
                             ? (
                                 <>
                                     {additionInputs.map((input) => {

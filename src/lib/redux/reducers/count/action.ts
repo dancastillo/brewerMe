@@ -1,5 +1,5 @@
 export const countActionTypes = {
-    ADD: "ADD",
+    ADD: 'ADD',
 };
 
 export const addCount = () => (dispatch) => {

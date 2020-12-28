@@ -1,10 +1,10 @@
-import React from "react";
-import fetch from "isomorphic-unfetch";
+import React from 'react';
+import fetch from 'isomorphic-unfetch';
 
-import { getDataByOption } from "@constants/api";
-import { getData } from "../../lib/utils/apiResponse";
-import TableDisplay from "../../components/table-display";
-import { Routes } from "@constants/routes";
+import { getDataByOption } from '@constants/api';
+import { getData } from '../../lib/utils/apiResponse';
+import TableDisplay from '../../components/table-display';
+import { Routes } from '@constants/routes';
 
 interface Interface {
     response: { data: {id: string, name: string}[] },
@@ -13,8 +13,8 @@ interface Interface {
 
 export default function Search({ response, option }: Interface) {
     const headers: string[] = (option === Routes.BEER)
-        ? ["Beer"]
-        : ["Brewery Name"];
+        ? ['Beer']
+        : ['Brewery Name'];
 
     return (
         <>
