@@ -1,11 +1,11 @@
-import { RouterPaths } from "../../../server/routes/constants/router-paths";
-import { addIdToRoute, createRouterPath } from "../../../server/utils/router-url";
+import { RouterPaths } from '../../../server/routes/constants/router-paths';
+import { addIdToRoute, createRouterPath } from '../../../server/utils/router-url';
 
-describe("router-url", () => {
-    const fakeId = "1234-56-7890";
-    const url = "/brewer.me";
+describe('router-url', () => {
+    const fakeId = '1234-56-7890';
+    const url = '/brewer.me';
 
-    it("getRouteUrl", () => {
+    it('getRouteUrl', () => {
         expect(addIdToRoute(RouterPaths.BEER, fakeId)).toEqual(`${RouterPaths.BEER}/${fakeId}`);
         console.log(addIdToRoute(RouterPaths.BEER_ID, fakeId));
         expect(addIdToRoute(RouterPaths.BEER_ID, fakeId)).toEqual(`${RouterPaths.BEER}/${fakeId}`);
@@ -20,8 +20,8 @@ describe("router-url", () => {
         expect(addIdToRoute(url, fakeId)).toEqual(`${url}/${fakeId}`);
     });
 
-    it("createRouterPath", () => {
-       const obj = {"latitude": 0, "longitude": 0};
+    it('createRouterPath', () => {
+       const obj = {'latitude': 0, 'longitude': 0};
        expect(createRouterPath(url, obj)).toEqual(`${url}/latitude/0/longitude/0`);
     });
 });
