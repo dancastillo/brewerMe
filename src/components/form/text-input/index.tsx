@@ -1,6 +1,6 @@
-import React from "react";
-import { ErrorMessage, Field } from "formik";
-import { IInput } from "@interfaces/components/IFormInput";
+import React from 'react';
+import { ErrorMessage, Field } from 'formik';
+import { IInput } from '@interfaces/components/IFormInput';
 
 function TextInput({ key, name, type, label, placeholder }: IInput) {
 

@@ -1,8 +1,8 @@
-const development = "http://localhost:3001/api";
+const development = 'http://localhost:3001/api';
 
-export const API_URL = process.env.NODE_ENV === "development"
+export const API_URL = process.env.NODE_ENV === 'development'
     ? development
-    : "tbd";
+    : 'tbd';
 
 export const LOCATION_API = (city: string, state: string) => `${API_URL}/location?city=${city}&state=${state}`;
 

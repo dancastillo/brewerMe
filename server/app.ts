@@ -1,14 +1,14 @@
-import express from "express";
+import express from 'express';
 
-import routes from "./routes";
+import routes from './routes';
 
-import "./lib/env";
+import './lib/env';
 
 const port = process.env.PORT || 3001;
 
 const app = express();
 
-app.set("port", port);
-app.use("/api", routes);
+app.set('port', port);
+app.use('/api', routes);
 
 export default app;

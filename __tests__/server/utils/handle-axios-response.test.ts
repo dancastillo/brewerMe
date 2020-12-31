@@ -1,10 +1,10 @@
-import { getResponse } from "../../../__mocks__/axiosResponse";
-import { getBeerRoute } from "../../../server/api/beerApi/utils/route-paths";
-import { IApiResponse } from "../../../server/interfaces/IApiResponse";
-import { handleAxiosResponse } from "../../../server/utils/handle-axios-response";
+import { getResponse } from '../../../__mocks__/axiosResponse';
+import { getBeerRoute } from '../../../server/api/beerApi/utils/route-paths';
+import { IApiResponse } from '../../../server/interfaces/IApiResponse';
+import { handleAxiosResponse } from '../../../server/utils/handle-axios-response';
 
-describe("handle-axios-response", () => {
-    it("test", () => {
+describe('handle-axios-response', () => {
+    it('test', () => {
         const axiosResponse = getResponse(getBeerRoute());
         const { data, status, statusText } = axiosResponse;
 

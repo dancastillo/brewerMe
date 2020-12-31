@@ -1,7 +1,7 @@
-import { Store } from "redux";
-import { AppInitialProps } from "next/app";
-import { NextPageContext } from "next";
-import { ThunkDispatch } from "redux-thunk";
+import { Store } from 'redux';
+import { AppInitialProps } from 'next/app';
+import { NextPageContext } from 'next';
+import { ThunkDispatch } from 'redux-thunk';
 
 interface AppStore extends Store {
     dispatch: ThunkDispatch;

@@ -1,15 +1,15 @@
-import * as React from "react";
+import * as React from 'react';
 
-import App, { AppInitialProps, AppContext } from "next/app";
-import { ThemeProvider } from "styled-components";
+import App, { AppInitialProps, AppContext } from 'next/app';
+import { ThemeProvider } from 'styled-components';
 
-import { theme } from "@definitions/styled";
-import { AppWithStore } from "@interfaces";
-import { wrapper } from "@redux";
+import { theme } from '@definitions/styled';
+import { AppWithStore } from '@interfaces';
+import { wrapper } from '@redux';
 
-import "@static/css/main.scss";
-import { Container } from "react-bootstrap";
-import Navbar from "../../components/navbar";
+import '@static/css/main.scss';
+import { Container } from 'react-bootstrap';
+import Navbar from '../../components/navbar';
 
 class BrewerMeApp extends App<AppWithStore> {
     static async getInitialProps({

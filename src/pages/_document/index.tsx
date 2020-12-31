@@ -1,12 +1,12 @@
-import * as React from "react";
+import * as React from 'react';
 import Document, {
     Html,
     Head,
     Main,
     NextScript,
     DocumentContext,
-} from "next/document";
-import { ServerStyleSheet } from "styled-components";
+} from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 class BrewerMeDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {

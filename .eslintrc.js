@@ -11,7 +11,7 @@ module.exports = {
   ],
   rules: {
     "semi": ["error", "always"],
-    "quotes": ["error", "double"],
+    "quotes": ["error", "single"],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": 1,
     "@typescript-eslint/no-inferrable-types": [
@@ -20,6 +20,7 @@ module.exports = {
       }
     ],
     "@typescript-eslint/no-unused-vars": "warn",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-interface": "off"
   }
 };

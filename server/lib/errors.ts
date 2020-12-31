@@ -2,8 +2,8 @@ class ErrorReporter {
     private apiKey: string;
 
     constructor(apiKey: string) {
-        if (apiKey === undefined || apiKey === "") {
-            throw new Error("apiKey required");
+        if (apiKey === undefined || apiKey === '') {
+            throw new Error('apiKey required');
         }
 
         this.apiKey = apiKey;
@@ -15,4 +15,4 @@ class ErrorReporter {
     }
 }
 
-export default new ErrorReporter(process.env.ERR_API_KEY || "localhost");
+export default new ErrorReporter(process.env.ERR_API_KEY || 'localhost');

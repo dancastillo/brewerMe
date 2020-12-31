@@ -1,4 +1,4 @@
-import { countActionTypes } from "./action";
+import { countActionTypes } from './action';
 
 const countInitialState = {
     count: 0,

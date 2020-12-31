@@ -1,5 +1,5 @@
-import { AxiosResponse } from "axios";
-import { IApiLocationResponse, IApiResponse } from "../interfaces/IApiResponse";
+import { AxiosResponse } from 'axios';
+import { IApiLocationResponse, IApiResponse } from '../interfaces/IApiResponse';
 
 
 export const handleAxiosResponse = (response : AxiosResponse): IApiResponse => {

@@ -3,5 +3,5 @@
  * @return string
  */
 export const encodeLocationQueryParam = (address: string) => {
-    return address.split(" ").join("+");
+    return address.split(' ').join('+');
 };

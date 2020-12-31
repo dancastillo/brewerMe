@@ -1,5 +1,5 @@
 export enum Routes {
-    BEER = "beer",
-    BREWERY = "brewery",
-    LOCATION = "location"
+    BEER = 'beer',
+    BREWERY = 'brewery',
+    LOCATION = 'location'
 }

@@ -1,4 +1,4 @@
-import { getResponse } from "./axiosResponse";
+import { getResponse } from './axiosResponse';
 
 const axios = {
     default: {

@@ -1,4 +1,4 @@
-import { IBrewery } from "./IBrewery";
+import { IBrewery } from './IBrewery';
 
 export interface IBeer {
     id: string;
