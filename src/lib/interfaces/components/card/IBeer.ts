@@ -1,4 +1,4 @@
-import { IBrewery } from "@interfaces/components/card/IBrewery";
+import { IBrewery } from '@interfaces/components/card/IBrewery';
 
 export interface IBeer {
     id: string;

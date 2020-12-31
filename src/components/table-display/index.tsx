@@ -1,13 +1,13 @@
-import React from "react";
-import Table from "react-bootstrap/Table";
-import TableHeader from "./tableHeader";
-import TableRow from "./tableRow";
-import { ITableRows } from "@interfaces/components/card/ITableRows";
+import React from 'react';
+import Table from 'react-bootstrap/Table';
+import TableHeader from './tableHeader';
+import TableRow from './tableRow';
+import { ITableRows } from '@interfaces/components/card/ITableRows';
 
 export default function TableDisplay({ tableHeaders, tableData }: ITableRows) {
 
     return (
-        <Table striped bordered hover className="text-center ">
+        <Table striped bordered hover className='text-center '>
             <TableHeader headers={tableHeaders}/>
             <tbody>
             {

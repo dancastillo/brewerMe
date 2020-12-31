@@ -1,27 +1,21 @@
-import { Router } from "express";
+import { Router } from 'express';
 
-import { RouterPaths } from "./constants/router-paths";
+import { RouterPaths } from './constants/router-paths';
 
-import * as location from "../controllers/location";
-import * as brewery from "../controllers/brewery";
-import * as beer from "../controllers/beer";
+import { locationRouter } from '../modules/location/location.router';
+import { breweryRouter } from '../modules/brewery/brewery.router';
+import { beerRouter } from '../modules/beer/beer.router';
 
 const routes: Router = Router();
 
 // Beer routes
-routes.get(RouterPaths.BEER,  beer.get);
-routes.get(RouterPaths.BEER_ID,  beer.getById);
+routes.use(RouterPaths.BEER,  beerRouter);
 
 // Brewery routes
-routes.get(RouterPaths.BREWERY,  brewery.get);
-routes.get(RouterPaths.BREWERY_ID,  brewery.getById);
+routes.use(RouterPaths.BREWERY,  breweryRouter);
 
 // Location routes
-routes.get(RouterPaths.LOCATION,  location.get);
-routes.get(RouterPaths.LOCATION_ID,  location.getById);
-routes.get(RouterPaths.LOCATION_NEARBY,  location.getNearby);
+routes.use(RouterPaths.LOCATION,  locationRouter);
 
-// Get Location route
-routes.get(RouterPaths.GET_LOCATION, location.getLatitudeLongitude);
 
 export default routes;

@@ -1,13 +1,13 @@
-import { objectToQueryParam } from "../../utils/object-to-query-param-string";
+import { objectToQueryParam } from '../../utils/object-to-query-param-string';
 
-import { QUERY_PARAMS } from "../constants/query-params";
-import { ROUTE_PATHS } from "../constants/routes";
+import { QUERY_PARAMS } from '../constants/query-params';
+import { ROUTE_PATHS } from '../constants/routes';
 
-import "../../../lib/env";
-import { encodeLocationQueryParam } from "../../../utils/encode-query-param";
+import '../../../lib/env';
+import { encodeLocationQueryParam } from '../../../utils/encode-query-param';
 
-const key: string = process.env.LOCATION_API_KEY || "";
-const apiUrl: string  = process.env.LOCATION_API || "";
+const key: string = process.env.LOCATION_API_KEY || '';
+const apiUrl: string  = process.env.LOCATION_API || '';
 
 /**
  * @return string
@@ -54,7 +54,7 @@ export const getLocationsNearbyRoute = (latitude: number, longitude: number): st
         {
             [QUERY_PARAMS.LATITUDE]: `${latitude}`,
             [QUERY_PARAMS.LONGITUDE]: `${longitude}`,
-            [QUERY_PARAMS.SEARCH_RADIUS]: "50"
+            [QUERY_PARAMS.SEARCH_RADIUS]: '50'
         }
     );
 

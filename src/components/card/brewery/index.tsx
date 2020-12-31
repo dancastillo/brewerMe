@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import SocialMediaIcons from "../shared/sociaMediaIcons";
-import UrlButton from "../shared/urlButton";
-import BackButton from "../../back-button";
-import { IBreweryCard } from "@interfaces/components/card/IBrewery";
+import SocialMediaIcons from '../shared/sociaMediaIcons';
+import UrlButton from '../shared/urlButton';
+import BackButton from '../../back-button';
+import { IBreweryCard } from '@interfaces/components/card/IBrewery';
 
 export default function BreweryCard({ brewery }: IBreweryCard) {
 
@@ -17,16 +17,16 @@ export default function BreweryCard({ brewery }: IBreweryCard) {
         url
     } = brewery;
 
-    const btnText = "Brewery Website";
+    const btnText = 'Brewery Website';
 
     return (
         <>
             <BackButton />
-            <div className="card text-center card-div border-bottom-0 border-right-5">
-                <h5 className="card-header">{name}</h5>
-                <div className="card-body">
-                    <h5 className="card-title">{short_description}</h5>
-                    <p className="card-text">
+            <div className='card text-center card-div border-bottom-0 border-right-5'>
+                <h5 className='card-header'>{name}</h5>
+                <div className='card-body'>
+                    <h5 className='card-title'>{short_description}</h5>
+                    <p className='card-text'>
                         {description}
                     </p>
                     <SocialMediaIcons

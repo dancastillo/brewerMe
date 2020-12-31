@@ -1,4 +1,4 @@
-import { ILocationResults } from "./ILocationResults";
+import { ILocationResults } from './ILocationResults';
 
 export interface ILocationResponse {
     status: string;

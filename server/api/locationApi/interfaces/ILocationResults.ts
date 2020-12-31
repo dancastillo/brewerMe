@@ -1,4 +1,4 @@
-import { LocationType } from "../constants/location-type";
+import { LocationType } from '../constants/location-type';
 
 interface IAddressComponents {
     long_name: string;

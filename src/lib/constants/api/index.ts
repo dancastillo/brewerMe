@@ -1,11 +1,11 @@
-import { Routes } from "@constants/routes";
+import { Routes } from '@constants/routes';
 import {
     BEER_API,
     BEER_API_BY_ID,
     BREWERY_API,
     BREWERY_API_BY_ID,
     LOCATION_API
-} from "@constants/api/routes";
+} from '@constants/api/routes';
 
 export const getDataByOption = (option: string) => {
     if (option === Routes.BEER) {
