@@ -6,21 +6,26 @@ import { ILocationResponse } from '../../api/locationApi/interfaces/ILocationRes
 import { getLocation } from '../../api/locationApi/locationApi';
 import { IApiLocationResponse } from '../../interfaces/IApiResponse';
 import { ICoordinates } from '../../interfaces/ICoordinates';
+import { HttpService } from '../../services/http.service';
 import { encodeLocationQueryParam } from '../../utils/encode-query-param';
 import { handleAxiosResponse, handleAxiosResponseFromGeoLocation } from '../../utils/handle-axios-response';
 
-export class LocationService {
+export class LocationService extends HttpService {
+
+  constructor() {
+    super(process.env.API_HOST);
+  }
 
   getLocationById = async (id: string): Promise<IAxiosResponse> => {
     const url: string = routePaths.getLocationByIdRoute(id);
 
-    return await axios.get(url, config);
+    return await this.instance.get(url, config);
   };
 
   getLocationsNearby = async (latitude: number, longitude: number): Promise<IAxiosResponse> => {
     const url: string = routePaths.getLocationsNearbyRoute(latitude, longitude);
 
-    return await axios.get(url, config);
+    return await this.instance.get(url, config);
   };
 
   getLocationAddress = async (address: string): Promise<ICoordinates> => {
