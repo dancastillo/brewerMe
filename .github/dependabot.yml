@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    commit-message:
+      include: scope
+      prefix: build
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-request-limit: 10
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
